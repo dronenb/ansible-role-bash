@@ -1,0 +1,7 @@
+---
+# tasks file for bash
+- name: Copy over bash preferences
+  ansible.builtin.copy:
+    src: "{{ role_path }}/files/etc/profile.d/bash_defaults.sh"
+    dest: /etc/profile.d/bash_defaults.sh
+    mode: '644'
