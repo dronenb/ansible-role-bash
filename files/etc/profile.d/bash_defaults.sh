@@ -20,7 +20,7 @@ if test -t 1; then
     # see if it supports colors...
     ncolors=$(tput colors)
     if test -n "$ncolors" && test "$ncolors" -ge 8; then
-        PS1="$(tput bold)$(tput setaf 2)\u@\h$(tput sgr0):$(tput bold)$(tput setaf 4)\w\\$ $(tput sgr0)"
+        PS1="\[$(tput bold)$(tput setaf 2)\]\u@\h\[$(tput sgr0)\]:\[$(tput bold)$(tput setaf 4)\]\w \\$ \[$(tput sgr0)\]"
         export PS1
         if [ -x "$(which dircolors)" ]; then
             if test -r ~/.dircolors; then
